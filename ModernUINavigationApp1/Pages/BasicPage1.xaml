@@ -15,8 +15,9 @@
                 <TextBlock ><Run Text="Conten"/><Run Text="t goes here"/><InlineUIContainer>                 
                       
                     </InlineUIContainer></TextBlock>
-                <DataGrid Name="list" Height="350" Width="600" ItemsSource="{Binding}"/> <!-- Need to have itemssoruce = binding -->
-
+                <Viewbox>
+                <DataGrid Name="list" Height="300" Width="600" ItemsSource="{Binding}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/> <!-- Need to have itemssoruce = binding -->
+                </Viewbox>
 
             </StackPanel>
         </ScrollViewer>
