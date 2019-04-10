@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 namespace ModernUINavigationApp1
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainWindow.xamlf
     /// </summary>
     public partial class MainWindow : ModernWindow
     {
