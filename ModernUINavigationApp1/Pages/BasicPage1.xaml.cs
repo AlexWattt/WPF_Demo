@@ -33,6 +33,7 @@ namespace ModernUINavigationApp1.Pages
 
             DataAccess.ExecuteSQL(sql);
             DataTable dt = DataAccess.GetDataTable(sql);
+            select.Visibility = Visibility.Visible;
             // DataView dataView = new DataView(dt);
             list.DataContext = dt.DefaultView;
         }

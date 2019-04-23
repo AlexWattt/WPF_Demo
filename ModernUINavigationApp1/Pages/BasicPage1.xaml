@@ -18,7 +18,7 @@
                 <Viewbox>
                 <DataGrid Name="list" Height="300" Width="600" ItemsSource="{Binding}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/> <!-- Need to have itemssoruce = binding -->
                 </Viewbox>
-
+                <Button Name="select" Content="Select" Width="71" HorizontalAlignment="Left" Height="26" Click="Button_Click" Visibility="Collapsed"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>
