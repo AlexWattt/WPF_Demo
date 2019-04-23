@@ -11,14 +11,14 @@
             <StackPanel MinWidth="200" HorizontalAlignment="Left">
                 <TextBlock Text="LETS LOOK AT SOME DATA" Style="{StaticResource Heading2}" />
                 <TextBox Name="search" Height="23" Text="Search Team" Width="100" HorizontalAlignment="Left" />
-                <Button Content="Go" Width="62" HorizontalAlignment="Left" Height="25" Click="Button_Click"/>
+                <Button Name="TeamSearch" Content="Go" Width="62" HorizontalAlignment="Left" Height="25" Click="TeamSearch_Click"/>
                 <TextBlock ><Run Text="Conten"/><Run Text="t goes here"/><InlineUIContainer>                 
                       
                     </InlineUIContainer></TextBlock>
                 <Viewbox>
                 <DataGrid Name="list" Height="300" Width="600" ItemsSource="{Binding}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/> <!-- Need to have itemssoruce = binding -->
                 </Viewbox>
-                <Button Name="select" Content="Select" Width="71" HorizontalAlignment="Left" Height="26" Click="Button_Click" Visibility="Collapsed"/>
+                <Button Name="Select" Content="Select" Width="71" HorizontalAlignment="Left" Height="26" Click="Select_Click" Visibility="Hidden"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

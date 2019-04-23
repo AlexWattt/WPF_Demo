@@ -25,7 +25,7 @@ namespace ModernUINavigationApp1.Pages
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void TeamSearch_Click(object sender, RoutedEventArgs e)
         {
             String sql = "Select Team_long_name AS team, team_short_name AS Short_Name from team" +
                 " WHERE TEAM_LONG_NAME LIKE '" + search.Text + "%' OR TEAM_SHORT_NAME LIKE '" + search.Text + "%'";
@@ -33,9 +33,14 @@ namespace ModernUINavigationApp1.Pages
 
             DataAccess.ExecuteSQL(sql);
             DataTable dt = DataAccess.GetDataTable(sql);
-            select.Visibility = Visibility.Visible;
+            Select.Visibility = Visibility.Visible;
             // DataView dataView = new DataView(dt);
             list.DataContext = dt.DefaultView;
         }
+        private void Select_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        
     }
 }
