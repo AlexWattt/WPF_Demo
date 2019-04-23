@@ -17,6 +17,11 @@
                     </InlineUIContainer></TextBlock>
                 <Viewbox>
                 <DataGrid Name="list" Height="300" Width="600" ItemsSource="{Binding}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/> <!-- Need to have itemssoruce = binding -->
+                
+                    <!-- Need to have itemssoruce = binding -->
+                </Viewbox>
+                <Viewbox>
+                <DataGrid Name="list2" Height="300" Width="600" ItemsSource="{Binding}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="Collapsed"/>
                 </Viewbox>
                 <Button Name="Select" Content="Select" Width="71" HorizontalAlignment="Left" Height="26" Click="Select_Click" Visibility="Hidden"/>
             </StackPanel>

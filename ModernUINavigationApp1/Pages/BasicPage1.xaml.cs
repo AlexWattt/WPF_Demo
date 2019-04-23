@@ -29,8 +29,9 @@ namespace ModernUINavigationApp1.Pages
         {
             String sql = "Select Team_long_name AS team, team_short_name AS Short_Name from team" +
                 " WHERE TEAM_LONG_NAME LIKE '" + search.Text + "%' OR TEAM_SHORT_NAME LIKE '" + search.Text + "%'";
-            //
-
+            // change visiabilty of the two tables since I will be going back and forth through them.
+            list.Visibility = Visibility.Visible;
+            list2.Visibility = Visibility.Collapsed;
             DataAccess.ExecuteSQL(sql);
             DataTable dt = DataAccess.GetDataTable(sql);
             Select.Visibility = Visibility.Visible;
@@ -39,6 +40,9 @@ namespace ModernUINavigationApp1.Pages
         }
         private void Select_Click(object sender, RoutedEventArgs e)
         {
+            list.Visibility = Visibility.Collapsed;
+            list2.Visibility = Visibility.Visible;
+
         }
 
         
