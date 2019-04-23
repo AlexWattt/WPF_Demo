@@ -27,7 +27,10 @@ namespace ModernUINavigationApp1.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            String sql = "Select * from Player";
+            String sql = "Select Team_long_name AS team, team_short_name AS Short_Name from team" +
+                " WHERE TEAM_LONG_NAME LIKE '" + search.Text + "%' OR TEAM_SHORT_NAME LIKE '" + search.Text + "%'";
+            //
+
             DataAccess.ExecuteSQL(sql);
             DataTable dt = DataAccess.GetDataTable(sql);
             // DataView dataView = new DataView(dt);

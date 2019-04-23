@@ -10,7 +10,7 @@
         <ScrollViewer>
             <StackPanel MinWidth="200" HorizontalAlignment="Left">
                 <TextBlock Text="LETS LOOK AT SOME DATA" Style="{StaticResource Heading2}" />
-                <TextBox Height="23" Text="Click GO" Width="100" HorizontalAlignment="Left" />
+                <TextBox Name="search" Height="23" Text="Search Team" Width="100" HorizontalAlignment="Left" />
                 <Button Content="Go" Width="62" HorizontalAlignment="Left" Height="25" Click="Button_Click"/>
                 <TextBlock ><Run Text="Conten"/><Run Text="t goes here"/><InlineUIContainer>                 
                       
