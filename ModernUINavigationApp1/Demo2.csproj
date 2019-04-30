@@ -84,16 +84,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Pages\TeamBets.xaml.cs">
+      <DependentUpon>TeamBets.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\DataAccess.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\BasicPage1.xaml">
+    <Page Include="Pages\TeamWins.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\ListPage1.xaml">
+    <Page Include="Pages\TeamBets.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\UnUsed.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -101,11 +108,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="Pages\BasicPage1.xaml.cs">
-      <DependentUpon>BasicPage1.xaml</DependentUpon>
+    <Compile Include="Pages\TeamWins.xaml.cs">
+      <DependentUpon>TeamWins.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\ListPage1.xaml.cs">
-      <DependentUpon>ListPage1.xaml</DependentUpon>
+    <Compile Include="Pages\UnUsed.xaml.cs">
+      <DependentUpon>UnUsed.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Settings\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>

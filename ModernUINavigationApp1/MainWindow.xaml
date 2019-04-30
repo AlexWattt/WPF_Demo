@@ -12,8 +12,8 @@
         <mui:LinkGroup DisplayName="welcome">
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="home" Source="/Pages/Home.xaml" />
-                <mui:Link DisplayName="Team Wins" Source="/Pages/BasicPage1.xaml" />
-                <mui:Link DisplayName="my list" Source="/Pages/ListPage1.xaml" />
+                <mui:Link DisplayName="Team Wins" Source="/Pages/TeamWins.xaml" />
+                <mui:Link DisplayName="Team Bets" Source="/Pages/TeamBets.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
         <mui:LinkGroup DisplayName="settings" GroupKey="settings">
