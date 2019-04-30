@@ -54,4 +54,35 @@ FROM (
 					WHERE MATCH.HOME_TEAM_GOAL < MATCH.AWAY_TEAM_GOAL)
 					AS SumCount)
 		ORDER by team_long_name		
----------------------------------------------------------------------------------------------------		
+---------------------------------------------------------------------------------------------------	
+--------------- GET WHICH COUNTRYS ARE IN WHICH League --------------------------------
+SELECT Country.NAME AS CountryName, League.name AS LeagueName
+	FROM Country
+	JOIN League ON League.country_id = Country.id;
+--------------------------Give betting deatils about teams ----------------------------
+SELECT team_long_name, 
+team_short_name,
+buildUpPlaySpeed,
+buildUpPlaySpeedClass,
+buildUpPlayDribbling,
+buildUpPlayDribblingClass,
+buildUpPlayPassing,
+buildUpPlayPassingClass,
+buildUpPlayPositioningClass,
+chanceCreationPassing,
+chanceCreationPassingClass,
+chanceCreationCrossing,
+chanceCreationCrossingClass,
+chanceCreationShooting,
+chanceCreationShootingClass,
+chanceCreationPositioningClass,
+defencePressure,
+defencePressureClass,
+defenceAggression,
+defenceAggressionClass,
+defenceTeamWidth,
+defenceTeamWidthClass,
+defenceDefenderLineClass
+	FROM TEAM 
+	JOIN Team_Attributes ON Team.team_api_id = Team_Attributes.team_api_id;
+------------------------------------------------------------------------------------------------------------
