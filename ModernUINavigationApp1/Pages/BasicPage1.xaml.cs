@@ -37,6 +37,7 @@ namespace ModernUINavigationApp1.Pages
             Select.Visibility = Visibility.Visible;
             // DataView dataView = new DataView(dt);
             list.DataContext = dt.DefaultView;
+            Header.Text = "Now Please select a team and hit select to see which teams have more wins then them";
         }
         private void Select_Click(object sender, RoutedEventArgs e)
         {
@@ -67,7 +68,15 @@ namespace ModernUINavigationApp1.Pages
             DataTable dt = DataAccess.GetDataTable(sql);
             Select.Visibility = Visibility.Visible;
             list2.DataContext = dt.DefaultView;
-            
+            String sqlTeam = "SELECT (SELECT COUNT(*) FROM ( SELECT TEAM_API_ID FROM TEAM WHERE TEAM_LONG_NAME = '" + row[0] + "') AS HOME_TEAM JOIN MATCH ON MATCH.HOME_TEAM_API_ID = HOME_TEAM.TEAM_API_ID WHERE MATCH.HOME_TEAM_GOAL > MATCH.AWAY_TEAM_GOAL) + (SELECT COUNT(*) FROM ( SELECT TEAM_API_ID FROM TEAM WHERE TEAM_LONG_NAME = '" + row[0] + "') AS AWAY_TEAM JOIN MATCH ON MATCH.AWAY_TEAM_API_ID = AWAY_TEAM.TEAM_API_ID WHERE MATCH.HOME_TEAM_GOAL < MATCH.AWAY_TEAM_GOAL) AS SumCount;";
+            DataAccess.ExecuteSQL(sqlTeam);
+            DataTable dt1 = DataAccess.GetDataTable(sqlTeam);
+            String num = dt1.Rows[0][0].ToString();
+            String newHeader = row[0] + " has " + num + " games won";
+
+            Header.Text = newHeader;
+
+
 
         }
 

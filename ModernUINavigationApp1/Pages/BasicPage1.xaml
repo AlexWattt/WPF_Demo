@@ -9,12 +9,12 @@
     <Grid Style="{StaticResource ContentRoot}" HorizontalAlignment="Left">
         <ScrollViewer>
             <StackPanel MinWidth="200" HorizontalAlignment="Left">
-                <TextBlock Text="LETS LOOK AT SOME DATA" Style="{StaticResource Heading2}" />
+                <TextBlock Name="Header" Text="Clear out the search bar and search for a team" Style="{StaticResource Heading2}" />
                 <TextBox Name="search" Height="23" Text="Search Team" Width="100" HorizontalAlignment="Left" />
                 <Button Name="TeamSearch" Content="Go" Width="62" HorizontalAlignment="Left" Height="25" Click="TeamSearch_Click"/>
-                <TextBlock ><Run Text="Conten"/><Run Text="t goes here"/><InlineUIContainer>                 
+                                
                       
-                    </InlineUIContainer></TextBlock>
+                    
                 <Viewbox>
                 <DataGrid Name="list" Height="300" Width="600" ItemsSource="{Binding}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/> <!-- Need to have itemssoruce = binding -->
                 
