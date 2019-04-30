@@ -23,7 +23,7 @@ namespace ModernUINavigationApp1.Pages
         public BasicPage2()
         {
             InitializeComponent();
-            String sql = "SELECT team_long_name, team_short_name,buildUpPlaySpeed,buildUpPlaySpeedClass,buildUpPlayDribbling,buildUpPlayDribblingClass,buildUpPlayPassing,buildUpPlayPassingClass,buildUpPlayPositioningClass,chanceCreationPassing,chanceCreationPassingClass,chanceCreationCrossing,chanceCreationCrossingClass,chanceCreationShooting,chanceCreationShootingClass,chanceCreationPositioningClass,defencePressure,defencePressureClass,defenceAggression,defenceAggressionClass,defenceTeamWidth,defenceTeamWidthClass,defenceDefenderLineClass	FROM TEAM 	JOIN Team_Attributes ON Team.team_api_id = Team_Attributes.team_api_id;";
+            String sql = "SELECT team_long_name, team_short_name, Team_Attributes.date, buildUpPlaySpeed,buildUpPlaySpeedClass,buildUpPlayDribbling,buildUpPlayDribblingClass,buildUpPlayPassing,buildUpPlayPassingClass,buildUpPlayPositioningClass,chanceCreationPassing,chanceCreationPassingClass,chanceCreationCrossing,chanceCreationCrossingClass,chanceCreationShooting,chanceCreationShootingClass,chanceCreationPositioningClass,defencePressure,defencePressureClass,defenceAggression,defenceAggressionClass,defenceTeamWidth,defenceTeamWidthClass,defenceDefenderLineClass	FROM TEAM 	JOIN Team_Attributes ON Team.team_api_id = Team_Attributes.team_api_id;";
             // change visiabilty of the two tables since I will be going back and forth through them.
             list.Visibility = Visibility.Visible;
             DataAccess.ExecuteSQL(sql);
