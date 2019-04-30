@@ -40,11 +40,42 @@ namespace ModernUINavigationApp1.Pages
         }
         private void Select_Click(object sender, RoutedEventArgs e)
         {
+            DataRowView row = list.SelectedItem as DataRowView;
+           // Console.WriteLine(row[0]);
             list.Visibility = Visibility.Collapsed;
             list2.Visibility = Visibility.Visible;
+            /* The follow code will have to be put in to some extra window in order to let
+             * the user know how many wins x team has
+             * SELECT 	
+	(SELECT COUNT(*)
+		FROM (
+		SELECT TEAM_API_ID 
+			FROM TEAM WHERE TEAM_LONG_NAME = 'KRC Genk') AS HOME_TEAM
+		JOIN MATCH ON MATCH.HOME_TEAM_API_ID = HOME_TEAM.TEAM_API_ID
+		WHERE MATCH.HOME_TEAM_GOAL > MATCH.AWAY_TEAM_GOAL) +		
+		(SELECT COUNT(*)
+		FROM (
+			SELECT TEAM_API_ID 
+				FROM TEAM WHERE TEAM_LONG_NAME = 'KRC Genk') AS AWAY_TEAM
+		JOIN MATCH ON MATCH.AWAY_TEAM_API_ID = AWAY_TEAM.TEAM_API_ID
+		WHERE MATCH.HOME_TEAM_GOAL < MATCH.AWAY_TEAM_GOAL)
+		AS SumCount;
+             * 
+             * */
+            String sql = "SELECT count(*) AS Wins, team_long_name as Team FROM ( SELECT A.team_long_name FROM( SELECT C.team_long_name, C.home_team_goal, C.away_team_goal FROM (SELECT MATCH.home_team_goal,MATCH.away_team_goal, HOME_TEAM.team_long_name FROM TEAM AS HOME_TEAM JOIN MATCH ON MATCH.home_team_api_id = HOME_TEAM.team_api_id ) AS C WHERE C.home_team_goal > C.away_team_goal ) AS A UNION ALL SELECT A.team_long_name FROM (SELECT C.team_long_name, C.home_team_goal, C.away_team_goal FROM (SELECT MATCH.home_team_goal,MATCH.away_team_goal, away_TEAM.team_long_name FROM TEAM AS AWAY_TEAM JOIN MATCH ON MATCH.AWAY_team_api_id = AWAY_TEAM.team_api_id ) AS C WHERE C.home_team_goal < C.away_team_goal ) AS A ) GROUP BY team_long_name HAVING Wins > (SELECT (SELECT COUNT(*) FROM ( SELECT TEAM_API_ID FROM TEAM WHERE TEAM_LONG_NAME = '"+ row[0] + "') AS HOME_TEAM JOIN MATCH ON MATCH.HOME_TEAM_API_ID = HOME_TEAM.TEAM_API_ID WHERE MATCH.HOME_TEAM_GOAL > MATCH.AWAY_TEAM_GOAL) + (SELECT COUNT(*) FROM ( SELECT TEAM_API_ID FROM TEAM WHERE TEAM_LONG_NAME = '"+row[0]+"') AS AWAY_TEAM JOIN MATCH ON MATCH.AWAY_TEAM_API_ID = AWAY_TEAM.TEAM_API_ID WHERE MATCH.HOME_TEAM_GOAL < MATCH.AWAY_TEAM_GOAL) AS SumCount) ORDER by team_long_name";
+            DataAccess.ExecuteSQL(sql);
+            DataTable dt = DataAccess.GetDataTable(sql);
+            Select.Visibility = Visibility.Visible;
+            list2.DataContext = dt.DefaultView;
+            
 
         }
 
         
+    }
+    public class Item
+    {
+        public string longName { get; set; }
+        public string shortName { get; set; }
     }
 }
