@@ -8,7 +8,20 @@
     <Grid Style="{StaticResource ContentRoot}">
         <ScrollViewer>
             <StackPanel MinWidth="200">
-                <TextBlock Text="TODO: add content" />
+                <TextBlock Text="Welcome to the European Soccer Program!" FontSize="20"/>
+                <TextBlock Text="Here are the teams along with their league:" FontSize="20"/>
+                <Viewbox>
+                    <DataGrid Name="list" Height="200" Width="500" ItemsSource="{Binding}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    <!-- Need to have itemssoruce = binding -->
+
+                    <!-- Need to have itemssoruce = binding -->
+                </Viewbox>
+                <TextBlock Text="There is plenty more to explore." FontSize="20"/>
+                <TextBlock Text="Different tabs will give you specific stats about soccer teams" FontSize="20"/>
+                <TextBlock Text="For a more deatiled purpose of this software vist our about page" FontSize="20"/>
+                <Label>
+                    <!--   <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="/Pages/Settings/About.xaml">About Page</Hyperlink> -->
+                </Label>
             </StackPanel>
         </ScrollViewer>
     </Grid>

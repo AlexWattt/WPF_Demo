@@ -9,8 +9,12 @@
     <Grid Style="{StaticResource ContentRoot}">
         <ScrollViewer>
             <StackPanel MinWidth="200">
-                <TextBlock Text="BASIC PAGE" Style="{StaticResource Heading2}" />
-                <TextBlock Text="Content goes here" />
+                <TextBlock Text="This window will show you betting odds and stats of teams" Style="{StaticResource Heading2}" />
+                <TextBlock Text="Please use this at your own risk!" />
+                <Viewbox>
+                    <DataGrid Name="list" Height="423" Width="666" ItemsSource="{Binding}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    <!-- Need to have itemssoruce = binding -->
+                </Viewbox>
             </StackPanel>
         </ScrollViewer>
     </Grid>
