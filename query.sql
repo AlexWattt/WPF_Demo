@@ -1,3 +1,15 @@
+-----------GETS THE PLAYERS With names like X ('B' in this case)-----------------
+Select PLAYER_NAME as Name 
+	FROM player
+	WHERE Name LIKE  'B%';
+
+-----------GETS THE PLAYERS WITH RANK HIGHER THAN X (48 in this case)------------
+Select P.player_name AS Name, Player_Attributes.overall_rating AS Rating 
+	FROM Player AS P 
+	JOIN Player_Attributes ON P.player_api_id =  Player_Attributes.player_api_id 
+	Group BY p.player_api_id Having Player_Attributes.overall_rating >= 48 
+	Order By Rating;
+
 -----------GETS THE AMOUNT OF WINS A TEAM HAS------------------------------------
 SELECT 	
 	(SELECT COUNT(*)

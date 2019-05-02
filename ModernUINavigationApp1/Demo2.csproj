@@ -107,6 +107,9 @@
     <Compile Include="Pages\PlayerNames.xaml.cs">
       <DependentUpon>PlayerNames.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PlayerRating.xaml.cs">
+      <DependentUpon>PlayerRating.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\TeamBets.xaml.cs">
       <DependentUpon>TeamBets.xaml</DependentUpon>
     </Compile>
@@ -116,6 +119,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\PlayerNames.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PlayerRating.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
