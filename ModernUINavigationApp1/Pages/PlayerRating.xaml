@@ -9,7 +9,7 @@
     <Grid Style="{StaticResource ContentRoot}" HorizontalAlignment="Left">
         <ScrollViewer>
             <StackPanel MinWidth="200" HorizontalAlignment="Left">
-                <TextBlock Name="Header" Text="Enter an integer and see all players with that ranking or higher" Style="{StaticResource Heading2}" />
+                <TextBlock Name="Header" Text="Enter an integer and see all players with that rating or higher" Style="{StaticResource Heading2}" />
                 <TextBox Name="searchRating" Height="23" Text="0-100" Width="100" HorizontalAlignment="Left" />
                 <Button Name="PlayerSearch" Content="Go" Width="62" HorizontalAlignment="Left" Height="25" Click="PlayerSearch_Click"/>
 
